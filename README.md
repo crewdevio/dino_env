@@ -21,7 +21,7 @@ or directly with the url.
 
 ``` javascript
 
-import * as env from "https://deno.land/x/dino_env";
+import * as env from "https://deno.land/x/dino_env/mod.ts";
 
 env.config();
 
@@ -33,7 +33,7 @@ you can specify the path of the .env file.
 
 
 ``` javascript
-import * as env from "https://deno.land/x/dino_env";
+import * as env from "https://deno.land/x/dino_env/mod.ts";
 
 env.config({ path: "./environment/.env" });
 
@@ -44,7 +44,7 @@ env.config({ path: "./environment/.env" });
 change the decode of the `.env` file
 
 ``` javascript
-import * as env from "https://deno.land/x/dino_env";
+import * as env from "https://deno.land/x/dino_env/mod.ts";
 
 env.config({ path: "./environment/.env", encoding: "utf-8" });
 

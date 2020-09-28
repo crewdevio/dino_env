@@ -10,7 +10,7 @@ specify the path of the `.env` file and import dino_env.
 install dino_env with [Trex](https://deno.land/x/trex) using:
 
 ``` sh
-$ Trex install --map dinoenv
+$ trex install --map dinoenv
 ```
 
 ``` javascript

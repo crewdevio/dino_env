@@ -2,8 +2,6 @@
 
 manage environment variables with deno.
 
-![dino](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCnBgTJHCBq_7NCZbc74znXLlJ1n5wq7ZXF_xJPXZiPBrP0Jan&s)
-
 ## Usage
 specify the path of the `.env` file and import dino_env.
 

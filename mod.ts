@@ -1,15 +1,17 @@
 /* base code from https://github.com/rubiin/deno-env */
 
+import { join } from "./imports/path.ts";
+
 export interface Config {
   path?: string;
   encoding?: string;
 }
 
-export type objectGen = {
+type objectGen = {
   [name: string]: string;
-}
+};
 
-const defaultPath = Deno.cwd() + "/.env";
+const defaultPath = join(Deno.cwd(), ".env");
 
 const LINE_BREAK = /\r\n|\n|\r/;
 const DECLARATION = /^\s*(\w+)\s*\=\s*(.*)?\s*$/;
@@ -30,9 +32,15 @@ function parse(source: string) {
   }, {} as objectGen);
 }
 
-export function config({ path = defaultPath, encoding = "utf-8" }: Config = {}) {
+/**
+ * load .env file
+ */
+export function config({
+  path = defaultPath,
+  encoding = "utf-8",
+}: Config = {}) {
   const encoder = new TextDecoder(encoding);
-  const env = Deno.readFileSync(path);
+  const env = Deno.readFileSync(join(Deno.cwd(), path));
   const entrie = encoder.decode(env);
 
   for (const [key, value] of Object.entries(parse(entrie))) {

@@ -3,15 +3,16 @@
 manage environment variables with deno.
 
 ## Usage
+
 specify the path of the `.env` file and import dino_env.
 
-install dino_env with [Trex](https://deno.land/x/trex) using:
+install dino_env with [trex](https://deno.land/x/trex) using:
 
-``` sh
+```sh
 $ trex install --map dinoenv
 ```
 
-``` javascript
+```javascript
 import * as env from "dinoenv";
 
 env.config();
@@ -19,40 +20,36 @@ env.config();
 
 or directly with the url.
 
-``` javascript
-
+```javascript
 import * as env from "https://deno.land/x/dinoenv/mod.ts";
 
 env.config();
-
 ```
 
 ## Config
 
 you can specify the path of the .env file.
 
-
-``` javascript
+```javascript
 import * as env from "https://deno.land/x/dinoenv/mod.ts";
 
 env.config({ path: "./environment/.env" });
-
 ```
-> **note**: by default use root project path
 
+> **note**: by default use root project path
 
 change the decode of the `.env` file
 
-``` javascript
+```javascript
 import * as env from "https://deno.land/x/dinoenv/mod.ts";
 
 env.config({ path: "./environment/.env", encoding: "utf-8" });
-
 ```
+
 > **note**: by default use "utf-8"
 
 ## permissions
 
-``` sh
+```sh
 --allow-read --allow-env
 ```

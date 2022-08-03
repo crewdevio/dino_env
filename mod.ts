@@ -40,7 +40,7 @@ export function config({
   encoding = "utf-8",
 }: Config = {}) {
   const encoder = new TextDecoder(encoding);
-  const env = Deno.readFileSync(join(Deno.cwd(), path));
+  const env = Deno.readFileSync(path.startsWith(Deno.cwd()) ? path : join(Deno.cwd(), path));
   const entrie = encoder.decode(env);
 
   for (const [key, value] of Object.entries(parse(entrie))) {
